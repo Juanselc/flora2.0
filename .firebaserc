@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "flora2-69c1f": {
+      "hosting": {
+        "app": [
+          "flora2-69c1f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "flora2-69c1f"
+  }
+}
