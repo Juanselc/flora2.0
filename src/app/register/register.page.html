@@ -1,29 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Registro de Usuario</ion-title>
+    <ion-title>Registro FloraGifco</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
-<form>
-  <ion-item lines="full">
-    <ion-label position="floating">Email</ion-label>
-    <ion-input type ="text" #email required></ion-input>
-  </ion-item>
+  <form>
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type ="text" #email required></ion-input>
+      </ion-item>
 
-  <ion-item lines = "full">
-    <ion-label position ="floating">Password</ion-label>
-    <ion-input type ="password" #password required></ion-input>
-  </ion-item>
+      <ion-item lines = "full">
+        <ion-label position ="floating">Password</ion-label>
+        <ion-input type ="password" #password required></ion-input>
+      </ion-item>
   
-  <ion-row>
-    <ion-col>
-      <ion-button (click)="onRegister(email, password)"
-      expand="block" >Registro</ion-button>
-    </ion-col>
-  </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="onRegister(email, password)"
+          expand="block" >Registro</ion-button>
+        </ion-col>
+      </ion-row>
 
-  </form>
+      </form>
+
+   <ion-row>
+          <ion-col>
+          <ion-col>
+            <ion-button type= "submit" routerLink="/login"
+            expand="block"> Login </ion-button>
+          </ion-col>
+          </ion-col>
+        </ion-row>
 
 </ion-content>

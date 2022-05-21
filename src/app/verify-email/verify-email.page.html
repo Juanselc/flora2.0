@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Verificacion </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="user$ | async as user">
+  <ion-row>
+    <ion-col>
+      <h2> Gracias por registrarse en floragifco </h2>
+      <p> Enviamos email de verificacion <strong>{{user.email}}</strong></p>
+      <p> Revisa tu email para ser verificado :) </p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-col>
+        <ion-button type= "submit" RouterLink="/login"
+        expand="block" >Login</ion-button>
+      </ion-col>
+    </ion-col>
+  </ion-row>
+</ion-content>

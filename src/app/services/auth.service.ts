@@ -16,7 +16,7 @@ import { User } from '../shared/user.interface';
 export class AuthService {
   public user$: Observable<User>;
 
-  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore) {
+  constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
         if (user) {
@@ -74,7 +74,7 @@ export class AuthService {
 
   async logout(): Promise<void>{
       try {
-        await this.afAuth.signOut();
+      await this.afAuth.signOut();
     } catch (error){console.log('Error-->',error);
     }
   }

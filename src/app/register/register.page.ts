@@ -12,7 +12,7 @@ export class RegisterPage  implements OnInit {
   email: string;
   password: string;
 
-  constructor(private authSvc: AuthService) { }
+  constructor(private authSvc: AuthService, private router: Router) { }
 
   ngOnInit() {}
 
@@ -21,13 +21,23 @@ export class RegisterPage  implements OnInit {
        console.log(email, password);
       const user = await this.authSvc.register(email.value, password.value);
       if(user){
-        console.log('user-->', user);
+        const isVerified = this.authSvc.isEmailVerified(user);
+        this.redirectUser(isVerified);
+        //console.log('user-->', user);
         //verifica email
       }
     }
     catch (error)
     {
       console.log('errro', error);
+    }
+  }
+
+  private redirectUser(isVerified: boolean): void {
+    if (isVerified) {
+      this.router.navigate(['home']);
+    } else {
+      this.router.navigate(['verify-email']);
     }
   }
 

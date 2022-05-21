@@ -15,7 +15,7 @@ export class LoginPage {
       const user = await this.authSvc.login(email.value, password.value);
       if (user) {
          const isVerified = this.authSvc.isEmailVerified(user);
-        // this.redirectUser(isVerified);
+        this.redirectUser(isVerified);
         //console.log('User->', user);
 
       }
@@ -36,11 +36,11 @@ export class LoginPage {
   //   }
   // }
 
-  // private redirectUser(isVerified: boolean): void {
-  //   if (isVerified) {
-  //     this.router.navigate(['admin']);
-  //   } else {
-  //     this.router.navigate(['verify-email']);
-  //   }
-  // }
+  private redirectUser(isVerified: boolean): void {
+    if (isVerified) {
+      this.router.navigate(['home']);
+    } else {
+      this.router.navigate(['verify-email']);
+    }
+  }
 }
