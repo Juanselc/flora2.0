@@ -12,6 +12,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireAuthModule} from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
+import { HeaderPageModule } from './header/header.module';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { AngularFireModule } from '@angular/fire/compat';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, provideFirebaseApp(
   () => initializeApp(environment.firebase)), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), AngularFireAuthModule,
-   AngularFireModule.initializeApp(environment.firebaseConfig)],
+   AngularFireModule.initializeApp(environment.firebaseConfig), HeaderPageModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
